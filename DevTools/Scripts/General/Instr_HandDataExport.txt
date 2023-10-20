@@ -1,0 +1,14 @@
+1. Highlight the "Hand" column of the session object's data table.
+
+2. Right click, and hover your mouse over "New Workspace Variable From Selection".
+
+3. Select the option that says "New Cell Array", creating a new cell array with all of your hand data in it. 
+
+4. Save your cell array file with a descriptive name. The naming convention I used was as such: HandData_Scene3_Side2
+
+5. Open the handDataExpanderScript.m in MATLAB, and configure the indicated variable values according to the instructions from the comments.
+        Note that you will certainly need to set the handDataCellArray variable equal to your descriptive cell array file name.
+
+6. Run segment A. Copy and past the entire console ouput into the tab of your spreadsheet dedicate to Segment A hand data.
+
+7. Repeat step 6 for segments B and C.

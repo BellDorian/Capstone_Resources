@@ -1,0 +1,87 @@
+    A labeled dataset.
+    Configurations for YOLO.
+    Training.
+
+Below is a general guide to set up YOLO for your use case:
+
+    Labeled Dataset:
+
+First, prepare images with the specific color boxes. For each image, you need to label the regions with a bounding box and annotate the boxes in a format YOLO understands: [class x_center y_center width height].
+
+For example:
+
+0 0.5 0.5 0.2 0.2
+
+This means the object class 0 (let's say it's 'hands') has a bounding box centered at 50% of the image's width and height, and the box's width and height are 20% of the image's dimensions.
+
+    Configuration:
+
+a. Classes and Colors File:
+
+Create a file, say colors.names, that has the names of your objects:
+
+hands
+eyes
+face
+mouth
+
+b. Yolo Configuration File:
+
+You'll need to create/modify a YOLO configuration file (e.g., yolov4-custom.cfg). Here are some parts you'll modify:
+
+    max_batches: At least 2000 times the number of classes.
+    steps: Values at 80% and 90% of max_batches.
+    classes: 4 (since you have 4 objects)
+    filters: (4 + 5) * 3 = 27, if you're using YOLOv3 or YOLOv4 with 3 scales.
+
+Make sure to adjust the [yolo] sections and the layers before them accordingly.
+
+c. Training Files List:
+
+Create a file, train.txt, that lists paths to all your training images:
+
+bash
+
+data/image1.jpg
+data/image2.jpg
+...
+
+d. Data Configuration File:
+
+Create a file, say colors.data, that points to your datasets and classes:
+
+makefile
+
+classes = 4
+train = data/train.txt
+valid = data/valid.txt  % If you have validation set
+names = data/colors.names
+backup = backup/
+
+    Training:
+
+With everything set up, start training using:
+
+bash
+
+./darknet detector train data/colors.data cfg/yolov4-custom.cfg yolov4.conv.137
+
+Note: This assumes you're using AlexeyAB's darknet. Adjust paths accordingly.
+
+Code Comments:
+
+Most of the above process involves configuration and setup, which doesn't necessarily translate directly to code comments. But if you were to break down parts of it into a script, the comments would describe the individual steps like:
+
+bash
+
+# Step 1: Prepare labeled dataset with colors and annotations
+
+# Step 2: Set up configuration files
+# - Define classes and colors
+# - Adjust YOLO configuration parameters
+# - Create a list of training files
+# - Configure data pointers and backup directory
+
+# Step 3: Begin training with the custom dataset and YOLO configurations
+
+Remember: YOLO is designed to detect objects based on their shape and features, not necessarily their color. Detecting only based on color is a simpler task that might not require such a complex model as YOLO. However, if you intend to detect the actual objects (hands, eyes, etc.) regardless of color, then YOLO is a suitable choice.
