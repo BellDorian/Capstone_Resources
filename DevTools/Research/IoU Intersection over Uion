@@ -1,0 +1,36 @@
+Professors link below:
+https://machinelearningspace.com/intersection-over-union-iou-a-comprehensive-guide/
+
+Finding Mean,Meadian, Mode, Sum and Variance
+https://www.youtube.com/watch?v=frWF6gNGFGQ&t=4s
+
+IoU in MatLab
+https://www.youtube.com/watch?v=PxvzrD20zZg
+
+IoU in MatLab
+https://www.youtube.com/watch?v=YW-1XSobX9k&t=17s
+
+Using Yolo for IoU
+https://www.youtube.com/watch?v=LjlzOt8Y8JQ&t=1291s
+
+Overview of how IoU works
+https://www.youtube.com/watch?v=0FmNxqLFeYo&t=34s
+
+Semantic Segmentation which is part of IoU
+https://www.youtube.com/watch?v=uiE56h5LyXc
+
+MatLab Website for IoU
+https://www.mathworks.com/help/matlab/ref/double.union.html
+
+Question and answer in MatLab for IoU
+https://www.mathworks.com/matlabcentral/answers/88277-how-to-use-intersection-and-union-in-matalb
+
+Commands in MatLab for IoU
+https://www.mathworks.com/help/matlab/set-operations.html
+
+
+Notes:
+oct 22 => There is not a lot on IoU using Matlab compared to using python. I have searched both video's and webpages. I am continuing to work on finding out how
+we can implement this in our project. My next step is to search the campus library to see what I can find from there. I understand the concept, the math
+behind the code, but I am working on find out how to work with it using all the boxes he required us to use. Will discuss this more indepth once we are
+meeting.
