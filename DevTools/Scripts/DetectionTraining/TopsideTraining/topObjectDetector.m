@@ -17,12 +17,12 @@ handDetector = trainRCNNObjectDetector(topsideTrainingData, pretrainedCNN, optio
 
 % ========== Save the Trained Detectors ==========
 
-saveDir = 'D:\myCode\CAPSTONE\TrainingData\Topside\MAT';
+saveDir = 'D:\myCode\CAPSTONE\A4_Detections\Matlab\Topside';
 if ~exist(saveDir, 'dir')
     mkdir(saveDir);
 end
 
-savePath = fullfile(saveDir, 'trainedTopSideHandDetectorT105.mat');
+savePath = fullfile(saveDir, 'trainedTopHandDetector_T04.mat');
 save(savePath, 'handDetector');
 
 
